@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      tsup:
+        specifier: file:tsup-8.4.0.tgz
+        version: file:tsup-8.4.0.tgz(jiti@2.4.2)(postcss@8.5.3)(typescript@5.7.3)
     devDependencies:
       '@arethetypeswrong/cli':
         specifier: ^0.17.4
@@ -14,9 +18,6 @@ importers:
       '@types/node':
         specifier: ^22.13.5
         version: 22.13.5
-      tsup:
-        specifier: ^8.4.0
-        version: 8.4.0(jiti@2.4.2)(postcss@8.5.3)(typescript@5.7.3)
       typescript:
         specifier: ^5.7.3
         version: 5.7.3
@@ -880,6 +881,9 @@ packages:
   fix-dts-default-cjs-exports@0.0.1:
     resolution: {integrity: sha512-Qa2130+SIawxFxux+yeveoHzgpY346kchfW8IcmVTZnjHWa4VC/ublBT3D5HIs9vbnKWE1GJyYfRei2J3ARRBg==}
 
+  fix-dts-default-cjs-exports@1.0.0:
+    resolution: {integrity: sha512-i9Vd++WOWo6JilNgZvNvmy1T0r+/j7vikghQSEhKIuDwz4GjUrYj+Z18zlL7MleYNxE+xE6t3aG7LiAwA1P+dg==}
+
   foreground-child@3.3.1:
     resolution: {integrity: sha512-gIXjKqtFuWEgzFRJA9WCQeSJLZDjgJUOMCMzxtvFq/37KojM1BFGufqsCy0r4qSQmYLsZYMeyRqzIWOMup03sw==}
     engines: {node: '>=14'}
@@ -1462,8 +1466,9 @@ packages:
   ts-interface-checker@0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
 
-  tsup@8.4.0:
-    resolution: {integrity: sha512-b+eZbPCjz10fRryaAA7C8xlIHnf8VnsaRqydheLIqwG/Mcpfk8Z5zp3HayX7GaTygkigHl5cBUs+IhcySiIexQ==}
+  tsup@file:tsup-8.4.0.tgz:
+    resolution: {integrity: sha512-HBANR2QvdyXTV8FVACwlpbtbT9uv5+kdTkWWlq2JBJHLBl1PH9/0JEdszQr4fYKOQT39ct7HXbwqgLRJvBRHAA==, tarball: file:tsup-8.4.0.tgz}
+    version: 8.4.0
     engines: {node: '>=18'}
     hasBin: true
     peerDependencies:
@@ -2309,6 +2314,12 @@ snapshots:
       mlly: 1.7.4
       rollup: 4.34.8
 
+  fix-dts-default-cjs-exports@1.0.0:
+    dependencies:
+      magic-string: 0.30.17
+      mlly: 1.7.4
+      rollup: 4.34.8
+
   foreground-child@3.3.1:
     dependencies:
       cross-spawn: 7.0.6
@@ -2844,7 +2855,7 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  tsup@8.4.0(jiti@2.4.2)(postcss@8.5.3)(typescript@5.7.3):
+  tsup@file:tsup-8.4.0.tgz(jiti@2.4.2)(postcss@8.5.3)(typescript@5.7.3):
     dependencies:
       bundle-require: 5.1.0(esbuild@0.25.0)
       cac: 6.7.14
@@ -2852,6 +2863,7 @@ snapshots:
       consola: 3.4.0
       debug: 4.4.0
       esbuild: 0.25.0
+      fix-dts-default-cjs-exports: 1.0.0
       joycon: 3.1.1
       picocolors: 1.1.1
       postcss-load-config: 6.0.1(jiti@2.4.2)(postcss@8.5.3)
