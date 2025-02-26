@@ -5,22 +5,29 @@
   "description": "unbuild node10 and node16 dts issue",
   "scripts": {
     "build": "unbuild",
+    "tsup": "tsup",
     "test:attw": "attw --pack"
   },
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
     },
-    "./esmonly": "./dist/esmonly.mjs"
+    "./esmonly": "./dist/esmonly.js"
   },
-  "main": "dist/index.cjs",
-  "module": "dist/index.mjs",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "typesVersions": {
     "*": {
       "esmonly": [
-        "dist/esmonly.mts"
+        "dist/esmonly.d.ts"
       ]
     }
   },
@@ -29,6 +36,8 @@
   ],
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.17.4",
+    "@types/node": "^22.13.5",
+    "tsup": "^8.4.0",
     "typescript": "^5.7.3",
     "unbuild": "file:unbuild-3.3.1.tgz"
   },
